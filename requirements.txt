@@ -1,0 +1,9 @@
+# env
+python_dotenv
+
+# Streamlit
+streamlit
+
+# API
+openai
+deepl
