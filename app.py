@@ -54,16 +54,20 @@ def deepl_trans(pre_trans_test: str, target_lang: str):
 
 
 def openai_chat_pg_question(pg: str, ques_txt_ja: str):
-    sys_txt = f"You are a most helpful {pg} engieer."
     user_txt = deepl_trans(ques_txt_ja, "EN-US")
     openai.api_key = os.environ.get("OPENAI_API_KEY")
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": sys_txt},
+            {
+                "role": "system",
+                "content": f"""You are a most helpful {pg} engieer.\n
+																Output in markdown format.\n
+																Code and commands to be output should be enclosed in ``` and ```.""",
+            },
             {
                 "role": "user",
-                "content": f"{user_txt}\n Please use markdown format.", # markdown形式を指示
+                "content": f"{user_txt}\n"
             },
         ],
     )
