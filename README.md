@@ -36,6 +36,10 @@ python3 -m venv .venv
 以下のコマンドを実行して仮想環境を起動します。
 
 ```bash
+# shell zsh
+source .venv/bin/activate
+
+# shell fish
 source .venv/bin/activate.fish
 ```
 
