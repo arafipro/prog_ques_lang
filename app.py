@@ -62,8 +62,8 @@ def openai_chat_pg_question(pg: str, ques_txt_ja: str):
             {
                 "role": "system",
                 "content": f"""You are a most helpful {pg} engieer.\n
-																Output in markdown format.\n
-																Code and commands to be output should be enclosed in ``` and ```.""",
+				Output in markdown format.\n
+				Code and commands to be output should be enclosed in ``` and ```.""",
             },
             {
                 "role": "user",
